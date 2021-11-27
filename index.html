@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integration widget</title>
+  </head>
+  <body>
+    <h1>Заголовок</h1>
+    <p>Какой то текст</p>
+    <div id="widget" style="position: relative">
+      <!-- СЮДА МЫ МОНТИРУЕМ ВИДЖЕТ -->
+      <!-- "position: relative" - понадобиться для нашего spinner'а, так как он c "position: absolute" -->
+    </div>
+    <p class="content">Еще какой-то текст</p>
+    <h2>а так же можно побаловаться с шириной окна и посмотреть на iframe</h2>
+
+    <script type="module" src="./spinner.js">
+      // ждем пока загрузится контент страницы, чтобы встроить виджет в <div id=widget>
+    </script>
+    <script type="module" src="./init.widget.js">
+      // создаём iframe и монтируем его в #widget.
+      // Далее в атрибут src приписываем адрес до html страницы нашего компонента в папке widget.
+      // После загрузки страницы в iframe удаляем spinner из DOM
+    </script>
+  </body>
+</html>
